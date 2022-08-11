@@ -17,7 +17,7 @@ function ProductDetail(props) {
 
   const navigate = useNavigate();
 
-  const [{ user, carts }, dispatch] = useStateValue();
+  const [{ user, checkedCarts }, dispatch] = useStateValue();
 
   const [activeImg, setActiveImg] = useState(0);
   const [count, setCount] = useState(1);
@@ -62,6 +62,7 @@ function ProductDetail(props) {
           amount: count,
         },
       });
+      console.log(checkedCarts.length);
       return () => clearTimeout(interval);
     }
   };
