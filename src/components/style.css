@@ -1,0 +1,95 @@
+/* simple-slider custom css */
+.simple-slider .slick-slider {
+  height: 100%;
+}
+.simple-slider .slick-arrow {
+  width: 35px !important;
+  height: 60px !important;
+  background-color: rgba(0, 0, 0, 0.18) !important;
+  border-radius: 2px !important ;
+  display: none !important;
+}
+.simple-slider:hover .slick-arrow {
+  display: block !important;
+}
+.simple-slider .slick-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.28) !important;
+}
+.simple-slider .slick-prev {
+  left: 0 !important;
+  z-index: 100 !important;
+}
+.simple-slider .slick-next {
+  right: 0 !important;
+}
+.simple-slider .slick-dots {
+  bottom: 8px !important;
+}
+
+.simple-slider .slick-dots li button::before {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1 !important;
+}
+.simple-slider .slick-dots li.slick-active button:before {
+  color: #ee4d2d !important;
+}
+.simple-slider .slick-slider,
+.simple-slider .slick-list,
+.simple-slider .slick-list div {
+  height: 100%;
+}
+
+/* multipleItems-slider custom css */
+.multipleItems-slider .slick-arrow::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.multipleItems-slider .slick-arrow {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.15);
+  transition: all 0.08s ease-in-out;
+  right: 0;
+}
+.multipleItems-slider .slick-arrow:hover {
+  background-color: #fff;
+}
+.multipleItems-slider .slick-slider:hover .slick-arrow {
+  width: 50px;
+  height: 50px;
+}
+.multipleItems-slider .slick-slider:hover .slick-arrow:before {
+  font-size: 25px;
+}
+.multipleItems-slider .slick-next {
+  transform: translate(50%, -50%);
+  right: 0;
+}
+.multipleItems-slider .slick-prev {
+  transform: translate(-50%, -50%);
+  left: 0;
+  z-index: 100;
+}
+.multipleItems-slider .slick-arrow::before {
+  color: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  font-size: 10px;
+  transition: all 0.08s ease-in-out;
+}
+.multipleItems-slider .slick-next::before {
+  content: "\f105";
+}
+.multipleItems-slider .slick-prev::before {
+  content: "\f104";
+}
+.multipleItems-slider .slick-disabled {
+  display: none !important;
+}

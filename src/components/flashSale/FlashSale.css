@@ -1,0 +1,135 @@
+.flashSale {
+  background-color: #fff;
+  width: 1200px;
+}
+.flashSale__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.flashSale__header-left {
+  display: flex;
+  gap: 17px;
+}
+.flashSale__header-left > img {
+  width: 130px;
+  height: 30px;
+}
+.flashSale__countdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.flashSale__countdown-container {
+  background-color: #000;
+  color: #fff;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+
+/* header__right */
+.flashSale__header-right {
+  display: flex;
+  align-items: center;
+  color: #ee4d2d;
+  text-transform: capitalize;
+  font-size: 14px;
+  cursor: pointer;
+}
+.flashSale__card {
+  position: relative;
+  cursor: pointer;
+}
+.flashSale__card-top {
+  position: relative;
+  margin: 5px 14px;
+  box-sizing: border-box;
+}
+.flashSale__card-top > img {
+  width: 100%;
+}
+.flashSale__imgFreeship {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+
+.flashSale__card-bottom {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.flashSale__price {
+  color: #ee4d2d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flashSale__price > span:first-child {
+  font-size: 12px;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+.flashSale__price > span:last-child {
+  font-size: 21px;
+}
+.flashSale__progress {
+  width: 75%;
+  background-color: #ee4d2d;
+  padding: 3px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  margin-top: 2px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: -2;
+}
+.flashSale__progressBar {
+  background-color: #ffbda6;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.flashSale__progress > span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.flashSale__sales {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(255, 212, 36, 0.9);
+  padding: 4px 2px 3px;
+  width: 36px;
+  height: 32px;
+}
+.flashSale__sales::before {
+  content: "";
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -4px;
+  position: absolute;
+  border-color: transparent rgba(255, 212, 36, 0.9);
+  border-style: solid;
+  border-width: 0 20px 4px;
+}
+.flashSale__sales > span:first-child {
+  color: #fff;
+}
+.flashSale__sales > span:last-child {
+  color: #ee4d2d;
+}

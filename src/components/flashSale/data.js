@@ -1,0 +1,68 @@
+const flashSale__products = [
+  {
+    imgSrc: require("../../assets/images/flashSale/product1.jpg"),
+    freeship: true,
+    sale: 23,
+    price: 760000,
+    sold: 3,
+    total: 20,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product2.png"),
+    freeship: true,
+    sale: 27,
+    price: 149000,
+    sold: 28,
+    total: 50,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product3.jpg"),
+    freeship: true,
+    sale: 52,
+    price: 2990000,
+    sold: 2,
+    total: 10,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product4.jpg"),
+    freeship: false,
+    sale: 50,
+    price: 145000,
+    sold: 10,
+    total: 40,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product5.jpg"),
+    freeship: true,
+    sale: 41,
+    price: 287000,
+    sold: 1,
+    total: 30,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product6.jpg"),
+    freeship: false,
+    sale: 61,
+    price: 999000,
+    sold: 8,
+    total: 50,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product7.jpg"),
+    freeship: true,
+    sale: 60,
+    price: 669000,
+    sold: 2,
+    total: 50,
+  },
+  {
+    imgSrc: require("../../assets/images/flashSale/product8.jpg"),
+    freeship: false,
+    sale: 10,
+    price: 1782000,
+    sold: 0,
+    total: 10,
+  },
+];
+
+export default flashSale__products;

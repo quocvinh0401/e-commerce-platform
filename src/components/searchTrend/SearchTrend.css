@@ -1,0 +1,62 @@
+.searchTrend {
+  background-color: #fff;
+  width: 1200px;
+}
+.searchTrend__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: solid 1px #e7eaed;
+}
+.searchTrend__header > span {
+  text-transform: uppercase;
+}
+.searchTrend__header > div {
+  color: #ee4d2d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.searchTrend__header > div > svg {
+  width: 14px;
+  height: 14px;
+  transform: rotateX(180deg);
+}
+.searchTrend__header > div > span {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.searchTrend__content {
+  display: flex;
+  width: 100%;
+}
+.searchTrend__product {
+  display: flex;
+  border-right: solid 1px #e7eaed;
+  justify-content: space-between;
+  flex: 1;
+  cursor: pointer;
+}
+.searchTrend__detail {
+  padding: 20px 10px 20px 20px;
+}
+.searchTrend__detail > div {
+  font-size: 14px;
+  color: #222222;
+  text-transform: capitalize;
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.searchTrend__detail > span {
+  font-size: 13px;
+  color: #727272;
+}
+.searchTrend__product > img {
+  width: 100px;
+  padding-right: 10px;
+}

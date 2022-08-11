@@ -1,0 +1,13 @@
+.electronicDevice {
+  background-color: #f5f5f5;
+  border-bottom: solid 4px #ee4d2d;
+  padding-bottom: 30px;
+}
+.electronicDevice__body {
+  display: flex;
+  gap: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 30px;
+}

@@ -1,0 +1,28 @@
+.shopeeMall__body-right {
+  width: 800px;
+}
+.shopeeMall__item {
+  height: 236px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.shopeeMall__item > img {
+  height: 100%;
+  background-size: cover;
+}
+.shopeeMall__item > span {
+  position: absolute;
+  bottom: 10px;
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  text-align: center;
+  color: #d0011d;
+}

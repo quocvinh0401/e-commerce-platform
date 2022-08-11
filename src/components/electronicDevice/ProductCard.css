@@ -1,0 +1,99 @@
+.productCard {
+  background-color: #fff;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.productCard:hover {
+  transform: translateY(-1px);
+}
+.productCard-top {
+  position: relative;
+}
+.productCard-top > img {
+  width: 100%;
+}
+.productCard-top-sale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  background-color: rgba(255, 212, 36, 0.9);
+  padding: 1px 2px;
+  text-align: center;
+}
+.productCard-top-sale::before {
+  content: "";
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -4px;
+  position: absolute;
+  border-color: transparent rgba(255, 212, 36, 0.9);
+  border-style: solid;
+  border-width: 0 20px 4px;
+}
+.productCard-top-sale > span:first-child {
+  color: #ee4d2d;
+}
+.productCard-top-sale > span:last-child {
+  color: #fff;
+  text-transform: uppercase;
+}
+.productCard-bottom {
+  padding: 8px;
+  font-size: 12px;
+}
+.productCard-bottom-desc {
+  overflow: hidden;
+  display: -webkit-box;
+  /* text-overflow: ellipsis; */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.productCard-bottom-price {
+  color: #ee4d2d;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin: 10px 0;
+}
+.productCard-bottom-price > span:first-child {
+  text-decoration: underline;
+}
+.productCard-bottom-price > span:last-child {
+  font-size: 16px;
+}
+.productCard-bottom-rating-sold {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.productCard-bottom-rating-sold-hidden {
+  visibility: hidden;
+}
+.productCard-bottom-rating {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+}
+.productCard-bottom-rating::before {
+  content: "★★★★★";
+  background: linear-gradient(
+    90deg,
+    #fc0 var(--percent),
+    #f3edb0 var(--percent)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.productCard-bottom-location {
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.6);
+}

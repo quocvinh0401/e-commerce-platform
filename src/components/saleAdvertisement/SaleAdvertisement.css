@@ -1,0 +1,65 @@
+.saleAdvertisement {
+  background-color: #fff;
+  box-shadow: 0 0.5px 7px 1px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+.saleAdvertisement__container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.saleAdvertisement__posters {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 115px 115px;
+  padding: 30px 0;
+}
+.saleAdvertisement__postersLeft {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.saleAdvertisement__poster {
+  height: 100%;
+}
+.saleAdvertisement__poster > img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.saleAdvertisement__postersRight {
+  background: url("https://cf.shopee.vn/file/e9601aeda2bf12cedad2abeb6c7f730f_xhdpi")
+    no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* css saleAdvertisement__tag */
+.saleAdvertisement__tags {
+  display: flex;
+}
+.saleAdvertisement__tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  padding: 0 8px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+.saleAdvertisement__tag:hover {
+  transform: translateY(-3px);
+}
+.saleAdvertisement__tag > img {
+  width: 45px;
+  height: 45px;
+}
+.saleAdvertisement__tag > span {
+  font-size: 13px;
+  text-transform: capitalize;
+}

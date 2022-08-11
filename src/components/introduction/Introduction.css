@@ -1,0 +1,31 @@
+.introduction {
+  background-color: #fff;
+  width: 100%;
+  border-top: solid 4px #ee4d2d;
+  padding-bottom: 40px;
+  margin-top: 40px;
+}
+.introduction__container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.introduction__container > h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 60px;
+}
+.introduction__container > p {
+  font-size: 12px;
+  margin-top: 15px;
+}
+.introduction__container u {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.54);
+}
+.introduction__container > h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
