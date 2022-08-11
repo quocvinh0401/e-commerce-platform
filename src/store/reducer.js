@@ -13,6 +13,7 @@ const initState = {
       maxPrice: undefined,
     },
     rating: 0,
+    orderPrice: "",
   },
   carts: [],
   checkedCarts: [],
@@ -103,6 +104,15 @@ const reducer = (state, action) => {
         filterConditions: {
           ...state.filterConditions,
           rating: action.rating,
+        },
+      };
+
+    case actions.SET_FILTER_ORDER_PRICE:
+      return {
+        ...state,
+        filterConditions: {
+          ...state.filterConditions,
+          orderPrice: action.order,
         },
       };
 

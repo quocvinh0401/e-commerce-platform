@@ -3,12 +3,12 @@ import "./ElectronicDeviceRight.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { products, filterProduct } from "./data";
+import { products } from "./data";
 import ProductCard from "./ProductCard";
 import { useStateValue } from "../../store/Context";
+import actions from "../../store/actions";
 
 function ElectronicDeviceRight() {
-  const [priceState, setPriceState] = useState();
   const [orderState, setOrderState] = useState([...products]);
   const [orderActive, setOrderActive] = useState("popular");
 
@@ -16,29 +16,30 @@ function ElectronicDeviceRight() {
 
   const handleSortOrderPopProduct = () => {
     setOrderActive("popular");
-    setPriceState();
     setOrderState([...products]);
+    dispatch({
+      type: actions.SET_FILTER_ORDER_PRICE,
+      order: "",
+    });
   };
 
   const handleSortOrderLatestProduct = () => {
     setOrderActive("latest");
-    setPriceState();
     const newProducts = [...products];
     newProducts.sort((product1, product2) => product2.id - product1.id);
     setOrderState(newProducts);
+    dispatch({
+      type: actions.SET_FILTER_ORDER_PRICE,
+      order: "",
+    });
   };
 
-  const handleSortOrderPriceProduct = () => {
+  const handleSortOrderPriceProduct = (order) => {
     setOrderActive("price");
-    const newProducts = [...products];
-    priceState === "lowestToHighest"
-      ? newProducts.sort(
-          (product1, product2) => product2.price - product1.price
-        )
-      : newProducts.sort(
-          (product1, product2) => product1.price - product2.price
-        );
-    setOrderState(newProducts);
+    dispatch({
+      type: actions.SET_FILTER_ORDER_PRICE,
+      order: order,
+    });
   };
 
   const handleOrderState = () => {
@@ -103,13 +104,22 @@ function ElectronicDeviceRight() {
         filterConditions.types.includes(product.type)
       );
     }
+    if (filterConditions.orderPrice) {
+      filterConditions.orderPrice === "descending"
+        ? newOrderState.sort(
+            (product1, product2) => product2.price - product1.price
+          )
+        : newOrderState.sort(
+            (product1, product2) => product1.price - product2.price
+          );
+    }
     return newOrderState;
   };
 
   const showPriceState = () => {
-    if (priceState === "lowestToHighest") {
+    if (filterConditions.orderPrice === "ascending") {
       return "giá: thấp đến cao";
-    } else if (priceState === "highestToLowest") {
+    } else if (filterConditions.orderPrice === "descending") {
       return "giá: cao đến thấp";
     } else {
       return "giá";
@@ -152,25 +162,23 @@ function ElectronicDeviceRight() {
             <div className="electronicDeviceRight__header-option-tags">
               <div
                 onClick={() => {
-                  setPriceState("lowestToHighest");
-                  handleSortOrderPriceProduct();
+                  handleSortOrderPriceProduct("ascending");
                 }}
                 className={`electronicDeviceRight__header-option-tag 
                   ${
-                    priceState === "lowestToHighest" &&
+                    filterConditions.orderPrice === "ascending" &&
                     "electronicDeviceRight__header-option-order-active"
                   }`}
               >
                 giá: thấp đến cao
               </div>
               <div
-                onClick={() => {
-                  setPriceState("highestToLowest");
-                  handleSortOrderPriceProduct();
+                onClick={async () => {
+                  handleSortOrderPriceProduct("descending");
                 }}
                 className={`electronicDeviceRight__header-option-tag 
                 ${
-                  priceState === "highestToLowest" &&
+                  filterConditions.orderPrice === "descending" &&
                   "electronicDeviceRight__header-option-order-active"
                 }`}
               >
