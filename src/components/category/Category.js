@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Category.css";
-import categories from "./data";
+// import categories from "./data";
 import "../style.css";
-import { useStateValue } from "../../store/Context";
-import actions from "../../store/actions";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Slider from "react-slick";
 
 function Category() {
-  const [state, dispatch] = useStateValue();
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const categoriesData = async () => {
+      try {
+        const response = await axios.get(
+          "https://62fcb417b9e38585cd441718.mockapi.io/api/categories"
+        );
+        await setCategories(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    categoriesData();
+  }, []);
 
   const settings = {
     dots: false,
@@ -23,16 +35,19 @@ function Category() {
     <div className="category multipleItems-slider">
       <div className="category__title">danh mục</div>
       <Slider {...settings}>
-        {categories.map((catergory__column, index1) => (
-          <div className="category__column" key={index1}>
-            {catergory__column.map((category__item, index2) => (
+        {categories.map((catergory__column, index) => (
+          <div className="category__column" key={index}>
+            {catergory__column.map((category__item) => (
               <Link
                 to="/thiet-bi-dien-tu"
                 className="category__item"
-                key={index2}
+                key={category__item.id}
               >
-                <img src={category__item.imgSrc} />
-                <span>{category__item.desc}</span>
+                <div>
+                  <img src={category__item.imageUrl} />
+                  <div className="category__item-gray-circle"></div>
+                </div>
+                <span>{category__item.category}</span>
               </Link>
             ))}
           </div>
