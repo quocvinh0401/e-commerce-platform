@@ -13,18 +13,21 @@ function ShopeeMall() {
           <div className="shopeeMall__slogan">
             <img
               src={require("../../assets/images/shopeeMall/mien-phi-tra-hang.png")}
+              alt=""
             />
             <span>7 ngày miễn phí trả hàng</span>
           </div>
           <div className="shopeeMall__slogan">
             <img
               src={require("../../assets/images/shopeeMall/hang-chinh-hang.png")}
+              alt=""
             />
             <span>hàng chính hãng 100%</span>
           </div>
           <div className="shopeeMall__slogan">
             <img
               src={require("../../assets/images/shopeeMall/mien-phi-van-chuyen.png")}
+              alt=""
             />
             <span>miễn phí vận chuyển</span>
           </div>

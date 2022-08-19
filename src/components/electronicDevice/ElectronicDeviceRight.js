@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ElectronicDeviceRight.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { products } from "./data";
+// import { products } from "./data";
 import ProductCard from "./ProductCard";
 import { useStateValue } from "../../store/Context";
 import actions from "../../store/actions";
+import axios from "axios";
 
 function ElectronicDeviceRight() {
-  const [orderState, setOrderState] = useState([...products]);
+  const [{ filterConditions }, dispatch] = useStateValue();
+
+  const [orderState, setOrderState] = useState([]);
   const [orderActive, setOrderActive] = useState("popular");
 
-  const [{ filterConditions }, dispatch] = useStateValue();
+  useEffect(() => {
+    const products1 = async () => {
+      try {
+        const response = await axios.get(
+          "https://62fcb417b9e38585cd441718.mockapi.io/api/products"
+        );
+        const productsData = await response.data.map((product) => ({
+          ...product,
+          price: Number(product.price) * 1000,
+        }));
+        setOrderState([...productsData]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    products1();
+  }, []);
 
   const handleSortOrderPopProduct = () => {
     setOrderActive("popular");
-    setOrderState([...products]);
+    const newProducts = [...orderState];
+    newProducts.sort((product1, product2) => product2.id - product1.id);
+    setOrderState(newProducts);
     dispatch({
       type: actions.SET_FILTER_ORDER_PRICE,
       order: "",
@@ -25,8 +46,8 @@ function ElectronicDeviceRight() {
 
   const handleSortOrderLatestProduct = () => {
     setOrderActive("latest");
-    const newProducts = [...products];
-    newProducts.sort((product1, product2) => product2.id - product1.id);
+    const newProducts = [...orderState];
+    newProducts.sort((product1, product2) => product2.ctime - product1.ctime);
     setOrderState(newProducts);
     dispatch({
       type: actions.SET_FILTER_ORDER_PRICE,
@@ -59,7 +80,7 @@ function ElectronicDeviceRight() {
 
     if (filterConditions.mainCategory) {
       newOrderState = newOrderState.filter(
-        (product) => filterConditions.mainCategory === product.mainCategory
+        (product) => filterConditions.mainCategory === product.category
       );
     }
 
@@ -173,7 +194,7 @@ function ElectronicDeviceRight() {
                 giá: thấp đến cao
               </div>
               <div
-                onClick={async () => {
+                onClick={() => {
                   handleSortOrderPriceProduct("descending");
                 }}
                 className={`electronicDeviceRight__header-option-tag 

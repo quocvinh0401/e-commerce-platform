@@ -41,8 +41,14 @@ function Header({ isSticky = false, isShowHeaderBottom = true }) {
           <span>Tải ứng dụng</span>
           <div>
             <span>Kết nối</span>
-            <img src="https://cmbvn.com.vn/wp-content/uploads/2022/02/d1-2.png" />
-            <img src="https://pnggrid.com/wp-content/uploads/2021/04/instagram-white-logo-768x768.png" />
+            <img
+              src="https://cmbvn.com.vn/wp-content/uploads/2022/02/d1-2.png"
+              alt=""
+            />
+            <img
+              src="https://pnggrid.com/wp-content/uploads/2021/04/instagram-white-logo-768x768.png"
+              alt=""
+            />
           </div>
         </div>
         <div className="header__topRight">
@@ -80,7 +86,10 @@ function Header({ isSticky = false, isShowHeaderBottom = true }) {
       {isShowHeaderBottom && (
         <div className="header__bottom">
           <Link to={"/"}>
-            <img src="https://storage.googleapis.com/ops-shopee-files-live/live/affiliate-blog/2019/05/logo-full-white.png" />
+            <img
+              src="https://storage.googleapis.com/ops-shopee-files-live/live/affiliate-blog/2019/05/logo-full-white.png"
+              alt=""
+            />
           </Link>
           <div className="header__bottomCenter">
             <div className="header__search">
@@ -116,7 +125,7 @@ function Header({ isSticky = false, isShowHeaderBottom = true }) {
                       className="header__bottom-cart-item"
                       key={index}
                     >
-                      <img src={cart.product.imgSrc[0]} alt="" />
+                      <img src={cart.product.imageUrl[0]} alt="" />
                       <div className="header__bottom-cart-item-desc">
                         {cart.product.desc}
                       </div>

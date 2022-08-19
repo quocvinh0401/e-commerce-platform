@@ -6,6 +6,9 @@
   transition: transform 0.1s ease;
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .productCard:hover {
   transform: translateY(-1px);
@@ -48,6 +51,9 @@
 .productCard-bottom {
   padding: 8px;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .productCard-bottom-desc {
   overflow: hidden;

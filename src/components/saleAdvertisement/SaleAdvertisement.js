@@ -37,7 +37,7 @@ function SaleAdvertisement() {
         <div className="saleAdvertisement__tags">
           {saleAdvertisement__tags.map((tag, index) => (
             <div className="saleAdvertisement__tag" key={index}>
-              <img src={tag.imgSrc} />
+              <img src={tag.imgSrc} alt="" />
               <span>{tag.desc}</span>
             </div>
           ))}

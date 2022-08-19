@@ -44,7 +44,7 @@ function Category() {
                 key={category__item.id}
               >
                 <div>
-                  <img src={category__item.imageUrl} />
+                  <img src={category__item.imageUrl} alt="" />
                   <div className="category__item-gray-circle"></div>
                 </div>
                 <span>{category__item.category}</span>

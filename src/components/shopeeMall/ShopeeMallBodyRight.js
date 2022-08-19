@@ -21,7 +21,7 @@ function ShopeeMallBodyRight() {
           <div className="shopeeMall__column" key={index1}>
             {column.map((item, index2) => (
               <div className="shopeeMall__item" key={index2}>
-                <img src={item.imgSrc} />
+                <img src={item.imgSrc} alt="" />
                 <span>{item.desc}</span>
               </div>
             ))}

@@ -33,6 +33,7 @@ function Suggestion() {
                   <img
                     className="suggestion__product-top-freeShip"
                     src={require("../../assets/images/suggestion/freeShip.png")}
+                    alt=""
                   />
                 )}
                 <div className="suggestion__product-top-sale">
@@ -72,6 +73,7 @@ function Suggestion() {
                   <img
                     className="suggestion__product-top-freeShip"
                     src={require("../../assets/images/suggestion/freeShip.png")}
+                    alt=""
                   />
                 )}
                 <div className="suggestion__product-top-sale">

@@ -16,10 +16,16 @@ function HomePage() {
       <Header isSticky={true} />
       <main>
         <SaleAdvertisement />
-        <img src="https://cf.shopee.vn/file/0ed0d80b26a4a8dc8f8652679f37604d" />
+        <img
+          src="https://cf.shopee.vn/file/0ed0d80b26a4a8dc8f8652679f37604d"
+          alt=""
+        />
         <Category />
         <FlashSale />
-        <img src="https://cf.shopee.vn/file/9590910c45efd1809bfc59cb8f6bf71a" />
+        <img
+          src="https://cf.shopee.vn/file/9590910c45efd1809bfc59cb8f6bf71a"
+          alt=""
+        />
         <ShopeeMall />
         <SearchTrend />
         <TopSearch />

@@ -1,7 +1,6 @@
 import "./App.css";
 import Login from "./components/login/Login";
 import { Routes, Route } from "react-router-dom";
-import { useStateValue } from "./store/Context";
 import ElectronicDevice from "./components/electronicDevice/ElectronicDevice";
 import ProductDetail from "./components/productDetail/ProductDetail";
 import HomePage from "./components/homePage/HomePage";
@@ -10,8 +9,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./components/cart/Cart";
 
 function App() {
-  const [state, dispatch] = useStateValue();
-
   return (
     <div className="app">
       <ScrollToTop>

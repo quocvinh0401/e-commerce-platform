@@ -11,7 +11,7 @@ import AddIcon from "@mui/icons-material/Add";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CheckIcon from "@mui/icons-material/Check";
 
-function ProductDetail(props) {
+function ProductDetail() {
   const location = useLocation();
   const product = location.state?.data;
 
@@ -24,12 +24,12 @@ function ProductDetail(props) {
   const [showNotification, setShowNotification] = useState(false);
 
   const handleRating = (rating) => {
-    let totalRating = 0;
-    for (let i = 1; i < rating.length; i++) {
-      totalRating += rating[i] * i;
+    let totalStar = 0;
+    for (let i = 0; i < rating.length; i++) {
+      totalStar += rating[i] * (i + 1);
     }
-    const average = totalRating / rating[0];
-    return Math.floor((totalRating / rating[0]) * 10) / 10;
+    const totalRating = rating.reduce((a, b) => a + b);
+    return (totalStar / totalRating).toFixed(1);
   };
 
   const changeFormPrice = (price) => {
@@ -75,7 +75,7 @@ function ProductDetail(props) {
           <div className="productDetail__breadcrumb">
             <span>shopee</span>
             <KeyboardArrowRightIcon />
-            <span>{product.mainCategory}</span>
+            <span>{product.category}</span>
             <KeyboardArrowRightIcon />
             <span>{product.subCategory}</span>
             <KeyboardArrowRightIcon />
@@ -87,11 +87,11 @@ function ProductDetail(props) {
             <div className="productDetail__detail-left">
               <img
                 className="productDetail__detail-left-bigImg"
-                src={product.imgSrc[activeImg]}
+                src={product.imageUrl[activeImg]}
                 alt=""
               />
               <div>
-                {product.imgSrc.map((image, index) => (
+                {product.imageUrl.map((image, index) => (
                   <img
                     className={`productDetail__detail-left-smallImg ${
                       activeImg === index &&

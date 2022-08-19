@@ -5,7 +5,6 @@ import "./Cart.css";
 import { useStateValue } from "../../store/Context";
 import actions from "../../store/actions";
 import { useNavigate } from "react-router";
-import { alertClasses } from "@mui/material";
 
 function Cart() {
   const [{ carts, checkedCarts, user }, dispatch] = useStateValue();

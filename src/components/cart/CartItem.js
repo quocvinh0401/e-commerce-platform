@@ -48,6 +48,7 @@ function CardItem({ cart, index }) {
   };
 
   const changeFormLink = (string) => {
+    const newString = string.replace("/", "-");
     return string.split(" ").join("-");
   };
 
@@ -65,7 +66,7 @@ function CardItem({ cart, index }) {
           to={`/${changeFormLink(cart.product.desc)}`}
           state={{ data: cart.product }}
         >
-          <img src={cart.product.imgSrc[0]} alt="" />
+          <img src={cart.product.imageUrl[0]} alt="" />
           <span>{cart.product.desc}</span>
         </Link>
       </div>
